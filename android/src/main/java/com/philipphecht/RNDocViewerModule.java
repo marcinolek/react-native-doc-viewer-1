@@ -304,7 +304,8 @@ public class RNDocViewerModule extends ReactContextBaseJavaModule {
                 }
                 return f;
             } else {
-                String extension = MimeTypeMap.getFileExtensionFromUrl(fileName);
+                String url = fileName.replaceAll(" ", "");
+                String extension = MimeTypeMap.getFileExtensionFromUrl(url);
                 System.out.println("Extensions DownloadFile " + extension);
                 if (extension.equals("") && fileType.equals("")) {
                     extension = "pdf";
